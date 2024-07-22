@@ -1,0 +1,125 @@
+{%include 'header.html'%}
+{%load static%}
+{% if messages %}
+  {% for message in messages %}
+    {% if message.tags == 'success' %}
+      <div class="alert alert-success alert-dismissible">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <center><strong>Success!</strong> {{ message }}</center>
+      </div>
+    {% elif message.tags == 'error' %}
+      <div class="alert alert-danger alert-dismissible">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <center><strong>Error!</strong> {{ message }}</center>
+      </div>
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+<main class="main">
+    <nav aria-label="breadcrumb" class="breadcrumb-nav border-0 mb-0">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{%url 'home_page'%}">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Login</li>
+            </ol>
+        </div><!-- End .container -->
+    </nav><!-- End .breadcrumb-nav -->
+
+    <div class="login-page bg-image pt-8 pb-8 pt-md-12 pb-md-12 pt-lg-17 pb-lg-17" style="background-image: url('{% static 'assets/images/img1.jpg' %}')">
+        <div class="container">
+            <div class="form-box">
+                <div class="form-tab">
+                    <ul class="nav nav-pills nav-fill" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="signin-tab-2" data-toggle="#" href="{%url 'user_login'%}"  aria-controls="signin-2" aria-selected="false">Sign In</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " id="register-tab-2" data-toggle="#" href="{%url 'user_register' %}"  aria-controls="register-2" aria-selected="true">Register</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="signin-2" role="tabpanel" aria-labelledby="signin-tab-2">
+                            <form method="POST" action="{%url 'user_login'%}">
+                                {%csrf_token%}
+                                <div class="form-group">
+                                    <label for="username_or_email">Username or email address *</label>
+                                    <input type="text" class="form-control"  name="username_or_email" required="">
+                                </div><!-- End .form-group -->
+
+                                <div class="form-group">
+                                    <label for="password">Password *</label>
+                                    <input type="password" class="form-control"  name="password" required="">
+                                </div><!-- End .form-group -->
+
+                                <div class="form-footer">
+                                    <button type="submit" class="btn btn-outline-primary-2">
+                                        <span>LOG IN</span>
+                                        <i class="icon-long-arrow-right"></i>
+                                    </button>
+
+                                   
+
+                                    <a href="#" class="forgot-link">Forgot Your Password?</a>
+                                </div><!-- End .form-footer -->
+                            </form>
+                            
+                        </div><!-- .End .tab-pane -->
+                        <div class="tab-pane fade" id="register-2" role="tabpanel" aria-labelledby="register-tab-2">
+                            <form method="POST" action="{%url 'user_register'%}">
+                                {%csrf_token%}
+                                <div class="form-group">
+                                    <label for="firstname">First Name *</label>
+                                    <input type="text" class="form-control" name="firstname" required="">
+                                </div><!-- End .form-group -->
+
+                                <div class="form-group">
+                                    <label for="lastname">Last Name *</label>
+                                    <input type="text" class="form-control" name="lastname" required="">
+                                </div><!-- End .form-group -->
+
+                                <div class="form-group">
+                                    <label for="gender">Gender *</label><br>
+                                    <input type="radio"  name="gender" value="Male"  required=""> Male <br>
+                                    <input type="radio" name="gender" value="Female" required=""> Female
+                                </div><!-- End .form-group -->
+
+                                <div class="form-group">
+                                    <label for="mobile_number">Mobile Number *</label><br>
+                                    <input type="text" class="form-control" name="mobile_number" required=""> 
+                                </div><!-- End .form-group -->
+
+                                <div class="form-group">
+                                    <label for="email">Your email address *</label>
+                                    <input type="email" class="form-control"  name="email" required="">
+                                </div><!-- End .form-group -->
+
+                                <div class="form-group">
+                                    <label for="username">Username *</label><br>
+                                    <input type="text" class="form-control" name="username" required=""> 
+                                </div><!-- End .form-group -->
+
+                                <div class="form-group">
+                                    <label for="password">Password *</label>
+                                    <input type="password" class="form-control"  name="password" required="">
+                                </div><!-- End .form-group -->
+
+                                <div class="form-footer">
+                                    <button style="margin-left: 160px;"  type="submit" class="btn btn-outline-primary-2">
+                                        <span>SIGN UP</span>
+                                        <i class="icon-long-arrow-right"></i>
+                                    </button>
+
+                                    
+                                </div><!-- End .form-footer -->
+                            </form>
+                         
+                        </div><!-- .End .tab-pane -->
+                    </div><!-- End .tab-content -->
+                </div><!-- End .form-tab -->
+            </div><!-- End .form-box -->
+        </div><!-- End .container -->
+    </div><!-- End .login-page section-bg -->
+</main>
+{%include 'footer.html'%}

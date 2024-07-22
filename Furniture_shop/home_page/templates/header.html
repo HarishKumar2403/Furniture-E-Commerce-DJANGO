@@ -1,0 +1,186 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- molla/index-2.html  22 Nov 2019 09:55:32 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Molla - Furniture Shopping</title>
+    <meta name="keywords" content="HTML5 Template">
+    <meta name="description" content="Molla - Bootstrap eCommerce Template">
+    <meta name="author" content="p-themes">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{%static 'assets/images/icons/apple-touch-icon.png'%}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{%static 'assets/images/icons/favicon-32x32.png'%}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{%static 'assets/images/icons/favicon-16x16.png'%}">
+    <link rel="manifest" href="static 'assets/images/icons/site.html">
+    <link rel="mask-icon" href="{%static 'assets/images/icons/safari-pinned-tab.svg'%}" color="#666666">
+    <link rel="shortcut icon" href="{%static 'assets/images/icons/favicon.ico'%}">
+    <meta name="apple-mobile-web-app-title" content="Molla">
+    <meta name="application-name" content="Molla">
+    <meta name="msapplication-TileColor" content="#cc9966">
+    <meta name="msapplication-config" content="{%static 'assets/images/icons/browserconfig.xml'%}">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Plugins CSS File -->
+    <link rel="stylesheet" href="{%static 'assets/css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{%static 'assets/css/plugins/owl-carousel/owl.carousel.css'%}">
+    <link rel="stylesheet" href="{%static 'assets/css/plugins/magnific-popup/magnific-popup.css'%}">
+    <!-- Main CSS File -->
+    <link rel="stylesheet" href="{%static 'assets/css/style.css'%}">
+    <link rel="stylesheet" href="{%static 'assets/css/plugins/nouislider/nouislider.css'%}">   
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <header class="header">
+            <div class="header-top">
+                <div class="container">
+                    <div class="header-left">
+                        
+
+                        
+                            <a style="margin-right: 20px;" href="#">India</a>
+                            <a href="{%url 'admin_page'%}"><i style="margin-right: 5px;" class="icon-user"></i>Admin Login</a>
+                           
+                    </div><!-- End .header-left -->
+                    
+                    
+                    <div class="header-right">   
+                        <ul class="top-menu">
+                            <li>
+                                <a href="#">Links</a>
+                                <ul>
+                                    <li><a href="tel:#"><i class="icon-phone"></i>Call: +0123 456 789</a></li>
+                                </ul>
+                            </li>
+                        </ul><!-- End .top-menu -->
+                        {%if request.session.username%}
+                        
+                        <div class="header-dropdown " >
+                            
+                            <a href="#" style="padding-left: 8px;">Welcome ! ,  {{ request.session.username }} </a>
+                            <div class="header-menu">
+                                <ul>
+                                    <li><a href="{%url 'user_profile'%}">My Profile</a></li>
+                                    
+                                    <li><a href="{%url 'user_logout'%}">Logout</a></li>
+                                </ul>
+                            </div><!-- End .header-menu -->
+                        </div><!-- End .header-dropdown --> 
+                        {%endif%}
+                    </div><!-- End .header-right -->
+                </div><!-- End .container -->
+            </div><!-- End .header-top -->
+
+            <div class="header-middle sticky-header">
+                <div class="container">
+                    <div class="header-left">
+                        <button class="mobile-menu-toggler">
+                            <span class="sr-only">Toggle mobile menu</span>
+                            <i class="icon-bars"></i>
+                        </button>
+
+                        <a href="{%url 'home_page'%}" class="logo">
+                            <img src="{%static 'assets/images/logo.png'%}" alt="Molla Logo" width="105" height="25">
+                        </a>
+
+                        <nav class="main-nav">
+                            <ul class="menu sf-arrows">
+                                <li class="megamenu-container active">
+                                    <a href="{%url 'home_page'%}" class="sf-with">Home</a>
+                                </li>
+                               
+                                <li>
+                                    <a href="#" class="sf-with-uf">Product</a>
+
+                                    <div class="megamenu megamenu-sm">
+                                        <div class="row no-gutters">
+                                            <div class="col-md-6">
+                                                <div class="menu-col">
+                                                    <div class="menu-title">Product Details</div><!-- End .menu-title -->
+                                                    <ul>
+                                                        <li><a href="{%url 'category' category='Bed'%}">Beds</a></li>
+                                                        
+                                                        <li><a href="{%url 'category' category='Gaming-Chair'%}">Gaming Chair</a></li>
+                                                        <li><a href="{%url 'category' category='Sofa'%}">Sofa</a></li>
+                                                        <li><a href="{%url 'category' category='Wardrobes'%}">Wardrobes</a></li>
+                                                        <li><a href="{%url 'category' category='Tv-Units'%}">Tv-Units</a></li>
+                                                    </ul>
+                                                </div><!-- End .menu-col -->
+                                            </div><!-- End .col-md-6 -->
+
+                                            <div class="col-md-6">
+                                                <div class="banner banner-overlay">
+                                                    <a href="category.html">
+                                                        <img src="{%static 'assets/images/menu/banner-2.jpg'%}" alt="Banner">
+
+                                                        <div class="banner-content banner-content-bottom">
+                                                            <div class="banner-title text-white">New Trends<br><span><strong>spring 2019</strong></span></div><!-- End .banner-title -->
+                                                        </div><!-- End .banner-content -->
+                                                    </a>
+                                                </div><!-- End .banner -->
+                                            </div><!-- End .col-md-6 -->
+                                        </div><!-- End .row -->
+                                    </div><!-- End .megamenu megamenu-sm -->
+                                </li>
+                                <li>
+                                    <a href="{%url 'about_page'%}" class="sf-with">About Us</a>
+                                </li>
+                                <li>
+                                    <a href="{%url 'contact_page'%}" class="sf-with">Contact Us</a>
+                                </li>
+                                <li>
+                                    <a href="{%url 'order_page'%}" class="sf-with">My Orders</a>
+                                </li>
+                                {%if request.session.username%}
+                                {%else%}
+                                <li>
+                                    <a href="{%url 'user_login'%}" class="sf-with">Login</a>
+                                </li>
+                                <li>
+                                    <a href="{%url 'user_register'%}" class="sf-with">Register</a>
+                                </li>
+                                {%endif%}
+                            </ul><!-- End .menu -->
+                        </nav><!-- End .main-nav -->
+                    </div><!-- End .header-left -->
+
+                    <div class="header-right">
+                        <div class="header-search">
+                            <a href="#" class="search-toggle" role="button" title="Search"><i class="icon-search"></i></a>
+                            <form action="#" method="get">
+                                <div class="header-search-wrapper">
+                                    <label for="q" class="sr-only">Search</label>
+                                    <input type="search" class="form-control" name="q" id="q" placeholder="Search in..." required>
+                                </div><!-- End .header-search-wrapper -->
+                            </form>
+                        </div><!-- End .header-search -->
+
+                        <div class="dropdown cart-dropdown">
+                            <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+                                <i class="icon-shopping-cart"></i>
+                                
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <div class="dropdown-cart-products">
+                                    <!-- End .product -->
+
+                                    <!-- End .product -->
+                                </div><!-- End .cart-product -->
+
+                            <!-- End .dropdown-cart-total -->
+
+                                <div class="dropdown-cart-action">
+                                    <a href="{%url 'cart_page'%}" class="btn btn-primary">View Cart</a>
+                                    <a href="{%url 'order_page'%}" class="btn btn-outline-primary-2"><span>Orders</span><i class="icon-long-arrow-right"></i></a>
+                                </div><!-- End .dropdown-cart-total -->
+                            </div><!-- End .dropdown-menu -->
+                        </div><!-- End .cart-dropdown -->
+                    </div><!-- End .header-right -->
+                </div><!-- End .container -->
+            </div><!-- End .header-middle -->
+        </header><!-- End .header -->

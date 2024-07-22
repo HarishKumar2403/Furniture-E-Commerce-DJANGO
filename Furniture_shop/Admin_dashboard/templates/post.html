@@ -1,0 +1,142 @@
+{%include 'admin_header.html'%}
+
+            <!-- Form Start -->
+            {%for i in messages%}
+                <div class="alert alert-success alert-dismissible" >
+                <a href="{%url 'admin_post'%}" class="close" data-dismiss="alert" aria-label="close" style="float: right; color: green;">&times;</a>
+                <center><strong>Success!</strong> {{i.message}}</center>
+                </div> 
+            {%endfor%}
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4" style="margin-left: 170px;" >
+                    <div class="col-sm-12 col-xl-10">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">Form Upload Page</h6>
+                            <form method="POST" enctype="multipart/form-data">
+                                {%csrf_token%}
+                                <div class="mb-3">
+                                    <label for="product_name" class="form-label">Product Name: </label>
+                                    <div>{{form.product_name}}</div>
+                                    
+                                </div>
+                                <div class="mb-3">
+                                    <label for="product_price" class="form-label">Product Price: </label>
+                                    <div>{{form.product_price}}</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="product_size" class="form-label">Product Size: </label>
+                                    <div>{{form.product_size}}</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="product_image1" class="form-label">Product Image 1:</label>
+                                    <div>{{form.product_image1}}</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="product_image2" class="form-label">Product Image 2:</label>
+                                    <div>{{form.product_image2}}</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="product_image3" class="form-label">Product Image 3:</label>
+                                    <div>{{form.product_image3}}</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="product_image4" class="form-label">Product Image 4:</label>
+                                    <div>{{form.product_image4}}</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="product_image5" class="form-label">Product Image 5:</label>
+                                    <div>{{form.product_image5}}</div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="product_description" class="form-label">Product Description:</label>
+                                    <div>{{form.product_description}}</div>
+                                    
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="bed_material_subtype" class="form-label">Bed Material Subtype: </label>
+                                    <div>{{form.product_description}}</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="bed_text" class="form-label">Bed Measurement:  </label>
+                                    <input type="text" name="bed_text" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="storage_type" class="form-label">Storage Type:</label>
+                                    <input type="text" name="storage_type" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="delivery_condition" class="form-label">Delivery Condition:</label>
+                                    <input type="text" name="delivery_condition" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="warranty" class="form-label">Warranty:</label>
+                                    <input type="text" name="warranty" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="seller_name" class="form-label">Seller Name:</label>
+                                    <input type="text" name="seller_name" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="model_number" class="form-label">Model Number:</label>
+                                    <input type="text" name="model_number" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="model_series" class="form-label">Model Series:</label>
+                                    <input type="text" name="model_series" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="primary_color" class="form-label">Primary Color:</label>
+                                    <input type="text" name="primary_color" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="suitable_for" class="form-label">Suitable For:</label>
+                                    <input type="text" name="suitable_for" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="storage_included" class="form-label">Storage Included:</label>
+                                    <input type="text" name="storage_included" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="with_mattress" class="form-label">With Mattress:</label>
+                                    <input type="text" name="with_mattress" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="recommended_mattress_length" class="form-label">Recommended Mattress Length:</label>
+                                    <input type="text" name="recommended_mattress_length" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="recommended_mattress_breadth" class="form-label">Recommended Mattress Breadth:</label>
+                                    <input type="text" name="recommended_mattress_breadth" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="width" class="form-label">Width:</label>
+                                    <input type="text" name="width" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="height" class="form-label">Height:</label>
+                                    <input type="text" name="height" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="depth" class="form-label">Depth:</label>
+                                    <input type="text" name="depth" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="floor_clearance" class="form-label">Floor Clearance:</label>
+                                    <input type="text" name="floor_clearance" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="weight" class="form-label">Weight:</label>
+                                    <input type="text" name="weight" class="form-control">
+                                </div>
+                                <center>
+                                <button type="button" class="btn btn-primary" style="margin-right: 10px;"><a href="{%url 'user_admin'%}" style="color: white;" >Back</a></button>
+                                <button type="submit" class="btn btn-primary" style="margin-right: 10px;">Upload</button>
+                                <button type="reset" class="btn btn-primary">Clear All</button></center>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+{%include 'admin_footer.html'%}    

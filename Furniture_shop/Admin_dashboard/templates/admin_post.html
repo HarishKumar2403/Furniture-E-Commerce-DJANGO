@@ -1,0 +1,29 @@
+{%include 'admin_header.html'%}
+
+            <!-- Form Start -->
+            {%for i in messages%}
+                <div class="alert alert-success alert-dismissible" >
+                <a href="{%url 'admin_post'%}" class="close" data-dismiss="alert" aria-label="close" style="float: right; color: green;">&times;</a>
+                <center><strong>Success!</strong> {{i.message}}</center>
+                </div> 
+            {%endfor%}
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4" style="margin-left: 170px;" >
+                    <div class="col-sm-12 col-xl-10">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">Product Upload Page</h6>
+                            
+                            <form method="POST" enctype="multipart/form-data">
+                                {%csrf_token%}           
+                                {{form.as_p}}
+                                
+                                <center>
+                                <button type="button" class="btn btn-primary" style="margin-right: 10px;"><a href="{%url 'user_admin'%}" style="color: white;" >Back</a></button>
+                                <button type="submit" class="btn btn-primary" style="margin-right: 10px;">Upload</button>
+                                <button type="reset" class="btn btn-primary">Clear All</button></center>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+{%include 'admin_footer.html'%}    

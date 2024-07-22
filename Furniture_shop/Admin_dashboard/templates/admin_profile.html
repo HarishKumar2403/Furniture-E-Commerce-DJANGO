@@ -1,0 +1,56 @@
+{%include 'admin_header.html'%}
+
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4" style="margin-left: 170px;" >
+        <div class="col-sm-12 col-xl-10">
+            <div class="bg-secondary rounded h-100 p-4">
+                <h6 class="mb-4">Admin Details Page</h6>
+                <form method="POST" >
+                    {%csrf_token%}
+                    <div class="form-floating mb-3">
+                        
+                        <input type="text" name="firstname" class="form-control" id="floatingText" placeholder="jhondoe" value="{{user.firstname}}" required >
+                        <label for="firstname" style="padding-top: 10px;">First Name </label>
+                    </div>
+                    
+                    <div class="form-floating mb-3">
+                        <input type="text" name="lastname" class="form-control" id="floatingText" placeholder="jhondoe" value="{{user.lastname}}" required >
+                        <label for="lastname" style="padding-top: 10px;">Last Name : </label>
+                    </div>
+                    
+                    <div class="form-floating mb-3">
+                        <input type="text" name="username" class="form-control" id="floatingText" placeholder="jhondoe" value="{{user.username}}" required>
+                        <label for="username" style="padding-top: 10px;">Username</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="text" name="mobile_number" class="form-control" id="floatingText" placeholder="jhondoe" value="{{user.mobile_number}}" required >
+                        <label for="mobile_number" style="padding-top: 10px;">Mobile Number </label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com" value="{{user.email}}" required >
+                        <label for="email" style="padding-top: 10px;">Email address</label>
+                    </div>
+                    <div class="form-floating mb-4">
+                        <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password" value="{{user.password}}" required>
+                        <label for="password" style="padding-top: 10px;">Password</label>
+                    </div>
+                    <div class="form-floating mb-4">
+                        <input type="text" name="confirm_password" class="form-control" id="floatingPassword" placeholder="Password" value="{{user.confirm_password}}" required>
+                        <label for="confirm_password" style="padding-top: 10px;">Confirm Password</label>
+                    </div>
+                    
+                    <center>
+                        <button type="button" class="btn btn-primary" style="margin-left: 10px;"><a href="{%url 'user_admin'%}" style="color: white;" >Back</a></button>
+                        <button type="submit" class="btn btn-primary" style="margin-left: 10px;">Save</button>
+                    </center>
+                    
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{%include 'admin_footer.html'%}
